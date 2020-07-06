@@ -26,6 +26,41 @@ header nav div {
     margin: 3px;
 }
 
+header a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+@keyframes blink {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
+.moretocome i {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    font-size: larger;
+}
+
+.moretocome i:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.moretocome i:nth-child(3) {
+    animation-delay: .4s;
+}
+
 /* MAIN */
 #leftside {
     position: absolute;
@@ -69,12 +104,18 @@ header nav div {
     bottom: 10%;
     width: 80px;
     height: 80px;
-    background-color: chocolate;
+    background-color: white;
     border-radius: 40px;
     transition: width 1.5s ease-in-out;
     display: flex;
     align-items: flex-start;
     z-index: 10;
+    background-image: url("./media/share.png");
+    background-size: 56px auto;
+    background-position: 4px;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #sociallinks div {
@@ -82,6 +123,10 @@ header nav div {
     background-color: whitesmoke;
     display: none;
     transition: display 1s 0.5s;
+}
+
+#sociallinks div img,svg {
+    width: 30px;
 }
 
 /* Footer */
