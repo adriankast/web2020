@@ -8,7 +8,8 @@ header {
 header nav {
     height: 40px;
     background-color: aquamarine;
-    width: 500px;
+    /*width: 500px;*/
+    width: max-content;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
@@ -91,11 +92,17 @@ header a {
 #middlecont {
     position: relative;
     width: 200px;
-    height: 40px;
-    margin-top: -20px;
+    height: 60px;
+    margin-top: -30px;
     margin-left: -100px;
     text-align: center;
-    background-color: gray;
+    background-color: #effffb;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#middlecont span {
+    vertical-align: middle;
+    display: inline;
 }
 
 #sociallinks {
@@ -110,7 +117,7 @@ header a {
     display: flex;
     align-items: flex-start;
     z-index: 10;
-    background-image: url("./media/share.png");
+    background-image: url("./media/share-m3.png");
     background-size: 56px auto;
     background-position: 4px;
     background-repeat: no-repeat;

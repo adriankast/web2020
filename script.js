@@ -1,3 +1,20 @@
+/**
+ * Init text insertion
+ */
+const textLines = document.getElementById("middlecont").getElementsByTagName("span")
+for (line in textLines) {
+    if (textLines.hasOwnProperty(line)) {
+        const safeHtml = textLines[line].innerHTML
+        textLines[line].innerHTML = ""
+        let count = 1
+        for (el of safeHtml) {
+            setTimeout((tar, currentEl) => {
+                tar.innerHTML += currentEl 
+            }, 250 * count, textLines[line], el)
+            count++
+        }
+    }
+}
 
 /**
  * handle the social icons fade-in/fade-out
@@ -19,7 +36,8 @@ document.getElementById("sociallinks").addEventListener("mouseover", (ht,el) => 
         }
     }
 })
-document.getElementById("sociallinks").addEventListener("mouseout", (ht,el) => {
+
+document.getElementById("sociallinks").addEventListener("mouseleave", (ht,el) => {
     socialmouse = false
     document.getElementById("sociallinks").style.width = "80px"
     const socitems = document.getElementById("sociallinks").getElementsByTagName("div")
