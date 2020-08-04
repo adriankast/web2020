@@ -7,7 +7,6 @@ header {
 }
 header nav {
     height: 40px;
-    background-color: aquamarine;
     /*width: 500px;*/
     width: max-content;
     display: flex;
@@ -18,7 +17,7 @@ header nav {
 }
 
 header nav div {
-    background-color: aliceblue;
+    background-color: lightslategrey;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 3px;
@@ -28,7 +27,7 @@ header nav div {
 }
 
 header a {
-    color: black;
+    color: aquamarine;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -69,7 +68,7 @@ header a {
     top: 0;
     width: 50%;
     height: 100%;
-    background-color: lightgray;
+    background-color: #ddf2f2;
     z-index: -1;
 }
 
@@ -79,7 +78,7 @@ header a {
     top: 0;
     width: 50%;
     height: 100%;
-    background-color: lightblue;
+    background-color: #d5e8ce;
     z-index: -1;
 }
 
@@ -90,6 +89,8 @@ header a {
 }
 
 #middlecont {
+    padding-top: 10px;
+    border-radius: 3px;
     position: relative;
     width: 200px;
     height: 60px;
@@ -113,21 +114,21 @@ header a {
     height: 80px;
     background-color: white;
     border-radius: 40px;
-    transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out, background-color 1.5s ease-in-out; 
     display: flex;
     align-items: flex-start;
     z-index: 10;
-    background-image: url("./media/share-m3.png");
+    background-image: url("./media/share-android.svg");
     background-size: 56px auto;
-    background-position: 4px;
+    background-position: 8px;
     background-repeat: no-repeat;
     align-items: center;
     justify-content: space-around;
+    background-color: aquamarine;
 }
 
 #sociallinks div {
     border-radius: 100%;
-    background-color: whitesmoke;
     display: none;
     transition: display 1s 0.5s;
 }
