@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #f7f7f7;
 }
 
 header {
@@ -61,24 +62,12 @@ header a {
 }
 
 /* MAIN */
-#leftside {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #f7f7f7;
-    z-index: -1;
+.legaltext {
+    max-height: 60vh;
+    overflow-y: scroll;
 }
-
-#rightside {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #f7f7f7;
-    z-index: -1;
+body {
+    overflow: hidden;
 }
 
 #middletext {
@@ -93,10 +82,11 @@ header a {
     padding-top: 10px;
     border-radius: 3px;
     position: relative;
-    width: 200px;
+    min-width: 30px;
+    width: 10rem;
     height: 60px;
     margin-top: -30px;
-    margin-left: -100px;
+    margin-left: -5rem;
     text-align: center;
     background-color: lightslategrey;
 }
@@ -165,7 +155,7 @@ header a {
     color: aquamarine;
     margin-top: 30px;
     width: 500px;
-    margin-left: -250px;
+    margin-left: -270px;
     background-color: lightslategray;
     padding: 20px;
     animation: fadein 3s ;
@@ -174,7 +164,7 @@ header a {
 #sociallinks {
     position: absolute;
     left: 10%;
-    bottom: 10%;
+    bottom: 55px;
     width: 80px;
     height: 80px;
     background-color: white;
@@ -198,12 +188,16 @@ header a {
     transition: display 1s 0.5s;
 }
 
-#sociallinks div img, #sociallinks div imgvg {
+#sociallinks div img, #sociallinks div svg {
     width: 32px;
 }
 
 /* Footer */
+footer {
+    min-width: 230px;
+}
 footer nav {
+    min-width: 230px;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -212,6 +206,7 @@ footer nav {
     padding-bottom: 50px;
     padding-top: 20px;
     background-color: lightslategray;
+    line-height: 20px;
 }
 
 
@@ -234,6 +229,7 @@ footer nav a.act {
 
 .legal {
     padding: 50px;
+    min-width: 230px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .legal > h1, .legal > h2, .legal > h3 {
@@ -244,4 +240,64 @@ footer nav a.act {
 
 .legaltext>ul {
     list-style-type: none;
+}
+
+.legaltext a {
+    color: black;
+    text-decoration-color: aquamarine;
+}
+
+@media (max-width: 1150px) {
+    footer nav {
+        padding-top: 60px;
+    }
+    #sociallinks {
+        bottom: 95px;
+    }
+    #middletext {
+        top: 40%;
+    }
+}
+
+@media (max-width: 630px) {
+    #slogan {
+        width: 400px;
+        margin-left: -220px;
+    }
+}
+
+@media (max-width: 470px) {
+    #sociallinks {
+        left: 5%;
+    }
+    #middletext {
+        top: 30%;
+    }
+    #slogan {
+        width: 300px;
+        margin-left: -170px;
+    }
+}
+
+@media (max-width: 384px) {
+    #sociallinks {
+        max-width: 90%;
+    }
+    #sociallinks div img, #sociallinks div svg {
+        width: 24px;
+    }
+    #slogan {
+        width: 200px;
+        margin-left: -110px;
+        padding: 10px;
+    }
+    .legal {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 171px) {
+    #sociallinks {
+        max-width: 170px;
+    }
 }
