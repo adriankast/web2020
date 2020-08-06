@@ -7,7 +7,6 @@ header {
 }
 header nav {
     height: 40px;
-    /*width: 500px;*/
     width: max-content;
     display: flex;
     justify-content: flex-start;
@@ -18,8 +17,8 @@ header nav {
 
 header nav div {
     background-color: lightslategrey;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 3px;
     align-items: center;
     display: flex;
@@ -68,7 +67,7 @@ header a {
     top: 0;
     width: 50%;
     height: 100%;
-    background-color: #ddf2f2;
+    background-color: #f7f7f7;
     z-index: -1;
 }
 
@@ -78,7 +77,7 @@ header a {
     top: 0;
     width: 50%;
     height: 100%;
-    background-color: #d5e8ce;
+    background-color: #f7f7f7;
     z-index: -1;
 }
 
@@ -86,9 +85,11 @@ header a {
     position: absolute;
     top: 50%;
     left: 50%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #middlecont {
+    color: white;
     padding-top: 10px;
     border-radius: 3px;
     position: relative;
@@ -97,13 +98,77 @@ header a {
     margin-top: -30px;
     margin-left: -100px;
     text-align: center;
-    background-color: #effffb;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightslategrey;
+}
+
+@keyframes blinkU {
+    0% {
+      text-decoration-color: white;
+    }
+    20% {
+        text-decoration-color: aquamarine;
+    }
+    100% {
+        text-decoration-color: white;
+    }
+}
+
+.blinkUnderline {
+    animation-name: blinkU;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
 }
 
 #middlecont span {
     vertical-align: middle;
     display: inline;
+    text-decoration: underline;
+    text-decoration-color: aquamarine;
+    text-decoration-thickness: 5px;
+}
+
+#middlecont>a {
+    color: white;
+    text-decoration-line: none;
+}
+
+#middlecont span.act {
+    color: aquamarine;
+}
+
+#profil {
+    position: relative;
+    margin-left: -100px;
+    margin-top: -150px;
+    text-align: center;
+    color: lightslategray;
+    width: 200px;
+}
+
+#profil>figcaption {
+    margin-bottom: 5px;
+}
+
+#profil>img {
+    width: 150px;
+    border-radius: 75px;
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    30% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+#slogan {
+    color: aquamarine;
+    margin-top: 30px;
+    width: 500px;
+    margin-left: -250px;
+    background-color: lightslategray;
+    padding: 20px;
+    animation: fadein 3s ;
 }
 
 #sociallinks {
@@ -118,7 +183,7 @@ header a {
     display: flex;
     align-items: flex-start;
     z-index: 10;
-    background-image: url("./media/share-android.svg");
+    background-image: url("./media/share.svg");
     background-size: 56px auto;
     background-position: 8px;
     background-repeat: no-repeat;
@@ -133,8 +198,8 @@ header a {
     transition: display 1s 0.5s;
 }
 
-#sociallinks div img,svg {
-    width: 30px;
+#sociallinks div img, #sociallinks div imgvg {
+    width: 32px;
 }
 
 /* Footer */
@@ -146,7 +211,7 @@ footer nav {
     text-align: center;
     padding-bottom: 50px;
     padding-top: 20px;
-    background-color: rgba(125, 125, 124, 124);
+    background-color: lightslategray;
 }
 
 
@@ -161,4 +226,22 @@ footer nav a {
 
 footer nav a:hover {
     text-decoration-color: aquamarine;
+}
+
+footer nav a.act {
+    text-decoration-color: aquamarine;
+}
+
+.legal {
+    padding: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.legal > h1, .legal > h2, .legal > h3 {
+    color: aquamarine;
+    background-color: lightslategray;
+    padding: 3px;
+}
+
+.legaltext>ul {
+    list-style-type: none;
 }
