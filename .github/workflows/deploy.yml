@@ -17,4 +17,7 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
     
     - name: List ftp
-      run: echo ${SFTP_PASS} > sftp ${SFTP_HOST} && ls
+      env:
+        SFTP_HOST: ${{ secrets.SFTP_HOST }}
+        SFTP_PASS: ${{ secrets.SFTP_PASS }}
+      run: echo "$SFTP_PASS" > sftp "$SFTP_HOST" && ls
