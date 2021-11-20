@@ -1,4 +1,4 @@
-name: Deploy manually
+name: Deploy to webspace
 
 on:
   push:
@@ -6,13 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  greet:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
     
     - name: Setup sshpass
       run: sudo apt update && sudo apt install sshpass
@@ -22,6 +19,6 @@ jobs:
       env:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSHPASS: ${{ secrets.SFTP_PASS }}
-      run: sshpass -e sftp "$SFTP_HOST" << ! \
-           ls \
+      run: sshpass -e sftp "$SFTP_HOST" << !
+           ls
            !
