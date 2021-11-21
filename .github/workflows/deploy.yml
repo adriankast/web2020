@@ -16,7 +16,10 @@ jobs:
     - run: sshpass -V
     
     - name: Add known host
-      run: mkdir ~/.ssh && ssh-keyscan -H SFTP_HOST >> ~/.ssh/known_hosts
+      env:
+        SSHPASS: ${{ secrets.SFTP_PASS }}
+        SFTP_HOST: ${{ secrets.SFTP_HOST }}
+      run: mkdir ~/.ssh && sshpass -e ssh-keyscan -H SFTP_HOST >> ~/.ssh/known_hosts
     
     - name: List ftp
       env:
