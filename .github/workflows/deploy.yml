@@ -16,7 +16,7 @@ jobs:
     - run: sshpass -V
     
     - name: Add known host
-      run: ssh-keyscan -H SFTP_HOST >> ~/.ssh/known_hosts
+      run: mkdir ~/.ssh && ssh-keyscan -H SFTP_HOST >> ~/.ssh/known_hosts
     
     - name: List ftp
       env:
