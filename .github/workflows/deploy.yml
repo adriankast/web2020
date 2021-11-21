@@ -27,8 +27,13 @@ jobs:
       
     - name: test2
       run: ls /
+      
+    - uses: actions/checkout@v2
     
-    - name: List ftp
+    - name: list
+      run: ls $GITHUB_WORKSPACE
+    
+    - name: Deploy put sftp
       env:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSHPASS: ${{ secrets.SFTP_PASS }}
