@@ -21,20 +21,12 @@ jobs:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSH_SERVER: ${{ secrets.SSH_SERVER }}
       run: mkdir ~/.ssh && sshpass -e ssh-keyscan -H "$SSH_SERVER" >> ~/.ssh/known_hosts
-    
-    - name: test
-      run: ls ./
       
-    - name: test2
-      run: ls /
-      
-    - uses: actions/checkout@v2
-    
-    - name: list
-      run: ls $GITHUB_WORKSPACE
+    - name: Checkout repo
+      uses: actions/checkout@v2
     
     - name: Deploy put sftp
       env:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSHPASS: ${{ secrets.SFTP_PASS }}
-      run: sshpass -e sftp "$SFTP_HOST" <<< $"put -r ./ ./Personal-Site"
+      run: sshpass -e sftp "$SFTP_HOST" <<< $"put -r $GITHUB_WORKSPACE ./Personal-Site"
