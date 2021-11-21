@@ -20,6 +20,6 @@ jobs:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSHPASS: ${{ secrets.SFTP_PASS }}
       run: |
-        sshpass -e sftp "$SFTP_HOST" << !
-        ls
+        sshpass -e sftp "$SFTP_HOST" << !\
+        ls\
         !
