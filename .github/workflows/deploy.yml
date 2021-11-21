@@ -22,6 +22,12 @@ jobs:
         SSH_SERVER: ${{ secrets.SSH_SERVER }}
       run: mkdir ~/.ssh && sshpass -e ssh-keyscan -H "$SSH_SERVER" >> ~/.ssh/known_hosts
     
+    - name: test
+      run: ls ./
+      
+    - name: test2
+      run: ls /
+    
     - name: List ftp
       env:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
