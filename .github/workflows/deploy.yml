@@ -29,4 +29,4 @@ jobs:
       env:
         SFTP_HOST: ${{ secrets.SFTP_HOST }}
         SSHPASS: ${{ secrets.SFTP_PASS }}
-      run: sshpass -e sftp "$SFTP_HOST" <<< $"put -r $GITHUB_WORKSPACE/public ./Personal-Site"
+      run: cd $GITHUB_WORKSPACE/public && sshpass -e sftp "$SFTP_HOST" <<< $" cd Personal-Site && put -r ."
