@@ -159,6 +159,14 @@ body {
     background-color: lightslategray;
     padding: 20px;
     animation: fadein 3s ;
+    line-height: 1.5em;
+}
+#slogan a{
+    color: aquamarine;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 3px;
+    text-decoration-color: aquamarine;
+    text-underline-offset: 2px;
 }
 
 #sociallinks {

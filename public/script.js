@@ -16,15 +16,3 @@ for (line in textLines) {
         }
     }
 }
-
-/**
- * Change question mark orientation
- */
-// document.getElementById("moretocome").addEventListener("mouseover", () => {
-//     const helper = document.getElementById("moretocome").innerHTML.replace("¿", "?")
-//     document.getElementById("moretocome").innerHTML = helper
-// })
-// document.getElementById("moretocome").addEventListener("mouseout", () => {
-//     const helper = document.getElementById("moretocome").innerHTML.replace("?", "¿")
-//     document.getElementById("moretocome").innerHTML = helper
-// })
